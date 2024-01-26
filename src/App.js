@@ -87,15 +87,15 @@ function App() {
 
             <TotalSavingHeading saving={state.totalSavings} val={(state.totalSavings <= 2000) ? 'savings does not looks good' : 'savings looks good'} />
 
-        <div className='income-exp-table'>
+            <div className='income-exp-table'>
+                <div className='income-table'>
+                    <Table className='bg-green-700' data={state.income} tablename="Income" />
+                    <h3>Total Income: {state.totalIncome}</h3>
+                    <Table className='bg-red-700' data={state.expense} tablename="Expense" />
 
-            <Table data={state.income} tablename="Income" />
-            <h3>Total Income: {state.totalIncome}</h3>
-            <br />
-            <br />
-            <Table data={state.expense} tablename="Expense" />
-            <h3>Total Expense: {state.totalExpense}</h3>
-        </div>
+                    <h3>Total Expense: {state.totalExpense}</h3>
+                </div>
+            </div>
 
         </div>
     );
