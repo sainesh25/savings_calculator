@@ -9,10 +9,10 @@ function Table(props) {
         <table border={1}>
             <thead>
 
-            <tr>
+            <tr key={1}>
                 <th colSpan={3}>{props.tablename}</th>
             </tr>
-            <tr>
+            <tr key={2}>
                 <th>Sr.No</th>
                 <th>Item's Description</th>
                 <th>Amount</th>

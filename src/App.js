@@ -1,4 +1,3 @@
-import logo from './logo.svg';
 import './App.css';
 
 import Input from './components/Input/Input';
@@ -15,84 +14,91 @@ function App() {
         amount: '',
         description: '',
         type: '',
-        income:[],
-        expense : [],
+        income: [],
+        expense: [],
         totalSavings: 0,
         totalIncome: 0,
         totalExpense: 0,
         message: ``
     });
 
-    if(state.totalSavings < 0){
+    if (state.totalSavings < 0) {
         state.totalSavings = 0;
     }
 
-    const handleInputChange = function(e){
+    const handleInputChange = function (e) {
         updateState({
             ...state,
-            [e.target.name] : e.target.value,
-        }) 
+            [e.target.name]: e.target.value,
+        })
     }
 
-    const addNewEntry = () =>{
-        if(state.type == 1){
+    const addNewEntry = () => {
+        if (state.type == 1) {
             let newEntry = {};
             newEntry.srNo = state.income.length + 1
             newEntry.amount = state.amount;
             newEntry.description = state.description;
-            
+
             let totalInc = +state.totalIncome + +newEntry.amount;
             let totalSavings = +totalInc - +state.totalExpense;
-            
+
             updateState({
                 ...state,
-                income:[...state.income, newEntry],
-                totalIncome : totalInc,
-                totalSavings : totalSavings,
-                
-            });           
+                income: [...state.income, newEntry],
+                totalIncome: totalInc,
+                totalSavings: totalSavings,
+
+            });
         }
-        else if (state.type == 2){
+        else if (state.type == 2) {
             let newEntry = {}
             newEntry.srNo = state.expense.length + 1;
             newEntry.amount = state.amount;
             newEntry.description = state.description;
             // object destructuring
-            
+
             let totalExp = +newEntry.amount + +state.totalExpense;
             let totalSavings = +state.totalIncome - +totalExp;
-            
+
             updateState({
                 ...state,
-                expense : [...state.expense, newEntry],
-                totalExpense : totalExp,
-                totalSavings : totalSavings,    
+                expense: [...state.expense, newEntry],
+                totalExpense: totalExp,
+                totalSavings: totalSavings,
             })
         }
-    } 
+    }
 
-   
 
-  return (
-    <div className="App">
-        <Input name='amount' type='number' placeholder='Amount' val={state.amount} changeFunction={handleInputChange}/>
-        <Input name='description' type='text' placeholder='Description' val={state.description} changeFunction={handleInputChange}/>
-        <Dropdown name='type' changeFunction={handleInputChange}/>
-            
-        <br/>
-        <Button changeFunction2={addNewEntry} name='Entry'/>
 
-        <TotalSavingHeading saving={state.totalSavings} val={(state.totalSavings <= 2000)? 'savings does not looks good': 'savings looks good'}/>
+    return (
+        <div className="App">
+            <div className='all-inputs'>
 
-        <Table data={state.income} tablename="Income"/>
-        <h3>Total Income: {state.totalIncome}</h3>
-        <br/>
-        <br/>
-        <Table data={state.expense} tablename="Expense"/>
-        <h3>Total Expense: {state.totalExpense}</h3>
+                <Input name='amount' type='number' placeholder='Amount' val={state.amount} changeFunction={handleInputChange} />
+                <Input name='description' type='text' placeholder='Description' val={state.description} changeFunction={handleInputChange} />
+                <Dropdown name='type' changeFunction={handleInputChange} />
+            </div>
 
-    </div>
-  );
+            <div className='button-section'>
+                <Button changeFunction2={addNewEntry} name='Entry' />
+            </div>
+
+            <TotalSavingHeading saving={state.totalSavings} val={(state.totalSavings <= 2000) ? 'savings does not looks good' : 'savings looks good'} />
+
+        <div className='income-exp-table'>
+
+            <Table data={state.income} tablename="Income" />
+            <h3>Total Income: {state.totalIncome}</h3>
+            <br />
+            <br />
+            <Table data={state.expense} tablename="Expense" />
+            <h3>Total Expense: {state.totalExpense}</h3>
+        </div>
+
+        </div>
+    );
 }
 
 export default App;

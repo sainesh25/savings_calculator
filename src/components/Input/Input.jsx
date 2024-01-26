@@ -1,5 +1,4 @@
-
-
+import './Input.css';
 
 function Input(props){
     return (
