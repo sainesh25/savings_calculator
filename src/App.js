@@ -74,7 +74,7 @@ function App() {
 
 
     return (
-        <div className="App p-5 bg-blue-300	">
+        <div className="App p-5 bg-blue-200	">
             <h1 className='text-4xl font-black  text-center mt-5'>Savings Calculator</h1>
             <div className='all-inputs flex justify-center my-5'>
 
@@ -91,12 +91,12 @@ function App() {
 
             <div className='income-exp-table space-x-4 p-5 flex justify-around'>
                 <div className='income-table p-5'>
-                    <Table className='bg-green-700' bgColor='bg-green-200' data={state.income} tablename="Income" />
+                    <Table className='bg-green-700' borderColor="border-green-500" bgColor='bg-green-200' data={state.income} tablename="Income" />
                     {/* <h3>Total Income: {state.totalIncome}</h3> */}
                     <TotalHeading>Total Income: {state.totalIncome}</TotalHeading>
                 </div>
                 <div className='expense-table p-5'>
-                    <Table className='bg-red-700' bgColor='bg-red-200' data={state.expense} tablename="Expense" />
+                    <Table className='bg-red-700' borderColor="border-red-500"  bgColor='bg-red-200' data={state.expense} tablename="Expense" />
                     <TotalHeading>Total Expense: {state.totalExpense}</TotalHeading>
                     {/* <h3 className='text-2xl	'>Total Expense: {state.totalExpense}</h3> */}
                 </div>

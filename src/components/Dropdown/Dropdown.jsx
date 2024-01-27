@@ -6,7 +6,7 @@ function Dropdown(props){
     // console.log(props.name);
     return (
         <>
-            <select className="rounded border border-slate-700 px-5 mx-5 m-1" name={props.name} onChange={(e) => {
+            <select className="rounded border border-slate-700 px-5 mx-5 m-1 focus:shadow-lg focus:shadow-gray-800" name={props.name} onChange={(e) => {
                 props.changeFunction(e);
             }}>
                 <option  value={0} selected disabled>Select...</option>
