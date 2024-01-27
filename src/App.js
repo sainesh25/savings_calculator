@@ -74,8 +74,9 @@ function App() {
 
 
     return (
-        <div className="App">
-            <div className='all-inputs flex justify-center'>
+        <div className="App p-5 bg-blue-300	">
+            <h1 className='text-4xl font-black  text-center mt-5'>Savings Calculator</h1>
+            <div className='all-inputs flex justify-center my-5'>
 
                 <Input name='amount' type='number' placeholder='Amount' val={state.amount} changeFunction={handleInputChange} />
                 <Input name='description' type='text' placeholder='Description' val={state.description} changeFunction={handleInputChange} />
