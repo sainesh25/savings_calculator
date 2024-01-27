@@ -75,20 +75,20 @@ function App() {
 
     return (
         <div className="App">
-            <div className='all-inputs'>
+            <div className='all-inputs flex justify-center'>
 
                 <Input name='amount' type='number' placeholder='Amount' val={state.amount} changeFunction={handleInputChange} />
                 <Input name='description' type='text' placeholder='Description' val={state.description} changeFunction={handleInputChange} />
                 <Dropdown name='type' changeFunction={handleInputChange} />
             </div>
 
-            <div className='button-section'>
+            <div className='button-section flex justify-center'>
                 <Button changeFunction2={addNewEntry} name='Enter' />
             </div>
 
             <TotalSavingHeading saving={state.totalSavings} val={(state.totalSavings <= 2000) ? 'savings does not looks good' : 'savings looks good'} />
 
-            <div className='income-exp-table space-x-4'>
+            <div className='income-exp-table space-x-4 p-5 flex justify-around'>
                 <div className='income-table p-5'>
                     <Table className='bg-green-700' bgColor='bg-green-200' data={state.income} tablename="Income" />
                     {/* <h3>Total Income: {state.totalIncome}</h3> */}

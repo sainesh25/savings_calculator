@@ -7,19 +7,6 @@
     font-family: "Poppins", sans-serif;
 
 }
-.all-inputs {
-    display: flex;
-    justify-content: center;
-}
-
-.button-section {
-    display: flex;
-    justify-content: center;
-}
-.income-exp-table{
-    display: flex;
-    justify-content: space-around;
-}
 .income-table, .expense-table{
     width: 50%;
     
