@@ -8,6 +8,7 @@ import Table from './components/Table/Table';
 
 
 import { useState } from 'react';
+import TotalHeading from './components/TotalHeading/TotalHeading';
 
 function App() {
     let [state, updateState] = useState({
@@ -90,12 +91,13 @@ function App() {
             <div className='income-exp-table space-x-4'>
                 <div className='income-table p-5'>
                     <Table className='bg-green-700' bgColor='bg-green-200' data={state.income} tablename="Income" />
-                    <h3>Total Income: {state.totalIncome}</h3>
+                    {/* <h3>Total Income: {state.totalIncome}</h3> */}
+                    <TotalHeading>Total Income: {state.totalIncome}</TotalHeading>
                 </div>
                 <div className='expense-table p-5'>
                     <Table className='bg-red-700' bgColor='bg-red-200' data={state.expense} tablename="Expense" />
-
-                    <h3>Total Expense: {state.totalExpense}</h3>
+                    <TotalHeading>Total Expense: {state.totalExpense}</TotalHeading>
+                    {/* <h3 className='text-2xl	'>Total Expense: {state.totalExpense}</h3> */}
                 </div>
             </div>
 
