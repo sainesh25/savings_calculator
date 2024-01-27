@@ -3,9 +3,12 @@
 
 function TotalSavingHeading(props){
     
+    
     return (
-        <>
-            <h1>Total Savings : {props.saving} {props.val}</h1>
+        <>                
+            <h1 className="text-4xl font-bold">Total Savings : <span style={{color: 
+                props.saving < 2000 ? 'red' : 'green' 
+            }}> {props.saving} {props.val}</span></h1>
         </>
     )
 }

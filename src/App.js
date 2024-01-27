@@ -82,16 +82,18 @@ function App() {
             </div>
 
             <div className='button-section'>
-                <Button changeFunction2={addNewEntry} name='Entry' />
+                <Button changeFunction2={addNewEntry} name='Enter' />
             </div>
 
             <TotalSavingHeading saving={state.totalSavings} val={(state.totalSavings <= 2000) ? 'savings does not looks good' : 'savings looks good'} />
 
-            <div className='income-exp-table'>
-                <div className='income-table'>
-                    <Table className='bg-green-700' data={state.income} tablename="Income" />
+            <div className='income-exp-table space-x-4'>
+                <div className='income-table p-5'>
+                    <Table className='bg-green-700' bgColor='bg-green-200' data={state.income} tablename="Income" />
                     <h3>Total Income: {state.totalIncome}</h3>
-                    <Table className='bg-red-700' data={state.expense} tablename="Expense" />
+                </div>
+                <div className='expense-table p-5'>
+                    <Table className='bg-red-700' bgColor='bg-red-200' data={state.expense} tablename="Expense" />
 
                     <h3>Total Expense: {state.totalExpense}</h3>
                 </div>
