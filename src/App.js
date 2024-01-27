@@ -87,7 +87,7 @@ function App() {
                 <Button changeFunction2={addNewEntry} name='Enter' />
             </div>
 
-            <TotalSavingHeading saving={state.totalSavings} val={(state.totalSavings <= 2000) ? 'savings does not looks good' : 'savings looks good'} />
+            <TotalSavingHeading saving={state.totalSavings} val={(state.totalSavings < 2000) ? 'savings does not looks good' : 'savings looks good'} />
 
             <div className='income-exp-table space-x-4 p-5 flex justify-around'>
                 <div className='income-table p-5'>

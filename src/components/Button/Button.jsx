@@ -1,9 +1,9 @@
-import './Button.css'
+// import './Button.css'
 
 function Button(props){
     return (
         <>
-            <button className='' onClick={
+            <button className='rounded bg-green-500 px-12 py-3 text-white transition ease-in-out delay-150 hover:-translate-y-1 hover:scale-110 duration-300 focus:outline-none hover:shadow-blue-800 hover:shadow-xl hover:bg-green-700' onClick={
                 () =>{
 
                     props.changeFunction2()

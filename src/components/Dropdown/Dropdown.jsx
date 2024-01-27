@@ -7,7 +7,7 @@ function Dropdown(props){
     return (
         <>
             <select className="rounded border border-slate-700 px-5 mx-5 m-1" name={props.name} onChange={(e) => {
-                props.changeFunction(e)
+                props.changeFunction(e);
             }}>
                 <option  value={0} selected disabled>Select...</option>
                 <option  value={1}>Income</option>
